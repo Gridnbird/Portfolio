@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Proza+Libre:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #5D4954;
+  font-family: "Open Sans", sans-serif;
+}
+
+.logo {
+  color: rgb(226, 226, 226);
+  letter-spacing: 5px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo a img {
+  width: 60px;
+  height: 60px;
+}
+
+.logo a img:last-child {
+  display: none;  
+}
+.logo a:hover img:last-child {
+  display: block;  
+}
+ .logo a:hover img:first-child {
+  display: none;  
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  color: #E2E2E2;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: #5D4954;
+  background-color: #E2E2E2;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 0.5px 0.5px;
+  border-radius: 2px;
+
+}
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(226, 226, 226);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+@media screen and (min-width: 769px) {
+  .nav-links {
+      width: 60%;
+      transition: transform 0.5s ease-in;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+      overflow-x: hidden;
+  }
+  
+  .nav-links {
+      position: fixed;
+      right: 0px;
+      height: 92vh;
+      top: 8vh;
+      background-color: #5D4954;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+
+  }
+  
+  .nav-links li {
+      opacity: 0;
+  }
+  
+  .burger {
+      display: block;
+      cursor: pointer;
+  }
+  .portrait {
+    width: 200px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    padding-top: 45px;
+  }
+
+
+}
+
+.nav-active {
+      transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+      opacity: 0;
+      transform: translateX(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+  
+  html,
+  body {
+    height: 100%;
+  }
+  
+  :root {
+    --spacing-1: 8px;
+    --spacing-2: 12px;
+    --spacing-3: 16px;
+    --spacing-4: 24px;
+    --border-radius: 12px;
+    --font-color: #323232;
+  }
+  /*! Body Style*/
+  .symbol {
+    color: red;
+  }
+  
+  h2 {
+    font-family: "Proza Libre", sans-serif;
+    margin: 0;
+    margin-bottom: var(--spacing-2);
+  }
+  
+  body {
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    max-width: 70%;
+    position: center;
+    align-items: center;
+    margin: auto;
+  }
+  
+  .portrait {
+    width: 200px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    padding-top: 45px;
+  }
+  
+  .about-me-container {
+    display: flex;
+  }
+  
+  .about-me-text-container {
+    margin-right: var(--spacing-3);
+  }
+  .about-me-text-container p {
+    padding-top: 5px;
+  }
+  
+  .project-image {
+    width: 50%;
+    height: auto;
+  }
+  
+  .project-title h3 {
+    display: inline;
+  }
+  
+  details {
+    cursor: pointer;
+  }
+  
+  summary {
+    list-style-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/right-arrow.svg);
+  }
+  
+  footer {
+    margin-top: auto;
+    padding: var(--spacing-2) 0;
+    text-align: center;
+  }
+  
+  section {
+    padding: var(--spacing-3) 0;
+  }
+  
+  .icon {
+    font-size: 2em;
+    color: var(--font-color);
+    margin: 0 var(--spacing-1);
+  }
+  
+  a {
+    color: var(--font-color);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  #logo {
+    margin: 0;
+  }
+  
+  #skills-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  #skills-container > * {
+    font-size: 2em;
+    width: 2em;
+    margin-top: var(--spacing-1);
+  }
+
+/* contact */
+#target {
+  padding-top: 10px;
+  margin-left: -8px;
+}
+
+
